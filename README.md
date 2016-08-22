@@ -1,13 +1,11 @@
-Notice: Unfortunately, all previous 20 commits got lost when I updated my project via git to github.
-
 # [Semantic UI - OctoberCMS](http://octobercms.com/theme/christophheich-semantic-ui-octobercms)
 
 [Semantic](http://semantic-ui.com/) allows developers to build beautiful websites fast, with concise HTML, intuitive javascript, and simplified debugging helping make front-end development a delightful experience. Semantic is responsively designed allowing your website to scale on multiple devices. 
 
 * License: [MIT](https://github.com/christophheich/semantic-ui-octobercms/blob/master/LICENSE)
 * Semantic-License: [MIT](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
-* JQuery-Version: 3.1.0 (Bower)
-* Semantic-Version: 2.2.3 (NPM)
+* JQuery-Version: 3.0.0
+* Semantic-Version: 2.2.1
 
 
 
@@ -20,17 +18,13 @@ Notice: Unfortunately, all previous 20 commits got lost when I updated my projec
 
 
 ## Usage
-Use the `assets/css/main.css` file to override CSS elements; use the `assets/js/app.js` file to add JavaScript content.
+Use the `assets/css/main.css` file to override CSS elements; use the `assets/js/app.js` file to add JavaScript snippets instead of changing elements inside the Semantic CSS or JavaScript files.
 
-## Updating manually
-- 'cd' into the folder \assets\vendor\
-- run in the command shell 'bower update'
+The theme uses the `.min` version of the CSS and JavaScript file of Semantic UI, the non-minimized version is also included but not activated.
+ 
 
-- 'cd' into the folder \source\
-- run in the command shell 'npm update'
-
-- 'cd' into the folder \source\semantic\
-- run in the command shell 'gulp build' 
+ 
+ 
  
 ---
 
@@ -46,16 +40,12 @@ To add or remove JavaScript files of the theme, you will need to add the JavaScr
 
 e.g.
 ```
-If you add more than one JavaScript file do not forget to remove the seperator (,) of the last file. Only the last file can't have a seperator - the other files need one!
-
-
-		<!-- SCRIPTS -->
         <script src="{{ [
-            'assets/vendor/bower_components/jquery/dist/jquery.js',
-            'assets/vendor/semantic/semantic.js',
-            'assets/js/core.js',
-            'assets/js/app.js',
-			'assets/js/AddYourJavaScriptFile.js'
+            'assets/js/YOUREXAMPLE.js', 
+            'assets/js/ANOTHEREXAMPJAVASCRIPT.js', 
+            'assets/js/vendor/jquery-2.2.1.min.js',
+            'assets/js/vendor/semantic.min.js',
+            'assets/js/app.js'
         ]|theme }}"></script>
 ```
 
@@ -73,17 +63,14 @@ To add or remove CSS files of the theme, you will need to add the CSS file to th
 e.g.
     
 ```
-If you add more than one CSS file do not forget to remove the seperator (,) of the last file. Only the last file can't have a seperator - the other files need one!
-
-
         <!-- CSS -->
         <link href="{{ [
-            'assets/vendor/semantic/semantic.css',
-            'assets/css/core.css',
+            'assets/css/YOURCSSFILE.css',
+            'assets/css/vendor/components/EXAMPLECOMPONENTFILE.css',
+            'assets/css/vendor/semantic.min.css',
             'assets/css/main.css'
-			'assets/css/AddYourCSSFile.css
         ]|theme }}" rel="stylesheet">
-        {% styles %}
+		{% styles %}
 ```
 
 
