@@ -1,3 +1,5 @@
+Notice: Unfortunately, all previous 20 commits got lost when I updated my project via git to github.
+
 # [Semantic UI - OctoberCMS](http://octobercms.com/theme/christophheich-semantic-ui-octobercms)
 
 [Semantic](http://semantic-ui.com/) allows developers to build beautiful websites fast, with concise HTML, intuitive javascript, and simplified debugging helping make front-end development a delightful experience. Semantic is responsively designed allowing your website to scale on multiple devices. 
