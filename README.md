@@ -6,8 +6,8 @@ Notice: Unfortunately, all previous 20 commits got lost when I updated my projec
 
 * License: [MIT](https://github.com/christophheich/semantic-ui-octobercms/blob/master/LICENSE)
 * Semantic-License: [MIT](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
-* JQuery-Version: 3.1.0 (Bower)
-* Semantic-Version: 2.2.3 (NPM)
+* JQuery-Version: 3.2.1 (NPM)
+* Semantic-Version: 2.2.10 (NPM)
 
 
 
@@ -20,17 +20,21 @@ Notice: Unfortunately, all previous 20 commits got lost when I updated my projec
 
 
 ## Usage
-Use the `assets/css/main.css` file to override CSS elements; use the `assets/js/app.js` file to add JavaScript content.
+Use the `assets/css/theme.css` file to override CSS elements; use the `assets/js/app.js` file to add JavaScript content.
 
 ## Updating manually
-- 'cd' into the folder \assets\vendor\
-- run in the command shell 'bower update'
 
-- 'cd' into the folder \source\
-- run in the command shell 'npm update'
+(You need for those commands Node.js installed visit https://nodejs.org/en/ for more information)
 
-- 'cd' into the folder \source\semantic\
-- run in the command shell 'gulp build' 
+- move into the folder \assets\vendor\
+- run in the command shell 'npm install jquery' 
+- run in command shell 'npm install semantic-ui --save'
+
+Do not change the settings except the place for 'semantic\' choose 'node_modules\semantic'
+
+- run in the command shell 'gulp build'
+
+
  
 ---
 
@@ -51,9 +55,9 @@ If you add more than one JavaScript file do not forget to remove the seperator (
 
 		<!-- SCRIPTS -->
         <script src="{{ [
-            'assets/vendor/bower_components/jquery/dist/jquery.js',
-            'assets/vendor/semantic/semantic.js',
-            'assets/js/core.js',
+            'assets/vendor/node_modules/jquery/dist/jquery.js',
+            'assets/vendor/node_modules/semantic/dist/semantic.js',
+            'assets/js/system.js',
             'assets/js/app.js',
 			'assets/js/AddYourJavaScriptFile.js'
         ]|theme }}"></script>
@@ -73,14 +77,14 @@ To add or remove CSS files of the theme, you will need to add the CSS file to th
 e.g.
     
 ```
-If you add more than one CSS file do not forget to remove the seperator (,) of the last file. Only the last file can't have a seperator - the other files need one!
+If you add more than one CSS file do not forget to remove the seperator (,) of the last file.  The last file can't have a seperator - the other files need one!
 
 
         <!-- CSS -->
         <link href="{{ [
-            'assets/vendor/semantic/semantic.css',
-            'assets/css/core.css',
-            'assets/css/main.css'
+            'assets/vendor/node_modules/semantic/dist/semantic.css',
+            'assets/css/system.css',
+            'assets/css/theme.css',
 			'assets/css/AddYourCSSFile.css
         ]|theme }}" rel="stylesheet">
         {% styles %}
@@ -89,35 +93,3 @@ If you add more than one CSS file do not forget to remove the seperator (,) of t
 
 
 ---
-
-
-
-
-
-## Metadata
-
-The metadata of your theme can be changed inside the layouts/default.htm - add your information between the quotation marks of `content=""`
-```
-    <head>
-        <meta charset="utf-8"/>
-        <title>{{ this.page.meta_title }}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="title" content="{{ this.page.title }}">
-        <meta name="description" content="{{ this.page.description }}">
-		<meta name="author" content=""> 						<!-- e.g. Christoph Heich -->
-        <meta name="keywords" content=""> 						<!-- e.g. Your Website, Website, Product -->
-        <meta name="language" content=""> 						<!-- e.g. German -->
-        <meta name="type" content=""> 							<!-- e.g. Website -->
-        <meta name="copyright" content=""> 						<!-- e.g. Copyright (c) 2016 - Christoph Heich -->
-        <meta name="resource-type" content="">	
-        <meta name="distribution" content="">					<!-- e.g. Global -->
-        <meta name="email" content="">							<!-- e.g. contact@yourwebsite.com -->
-        <meta name="rating" content="General">
-        <meta name="robots" content="INDEX,FOLLOW">
-        <meta name="revisit-after" content="7 Days">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta http-equiv="content-language" content="en">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}"/>
-    </head>
-```
